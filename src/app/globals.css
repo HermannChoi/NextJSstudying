@@ -1,27 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  text-decoration: none;
+  font-family: "Bagel Fat One";
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(50, 50, 50);
+  color: white;
+  font-size: 20px;
+}
+
+h1 a {
+  font-size: 40px !important;
+}
+
+a {
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 10px white;
 }
