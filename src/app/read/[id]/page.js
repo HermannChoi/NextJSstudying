@@ -1,12 +1,15 @@
-import React from "react";
+export default async function page(props) {
+  const resp = await fetch(`http://localhost:9999/topics/${props.params.id}`, {
+    cache: "no-store",
+  });
+  const topic = await resp.json();
 
-function page(props) {
   return (
     <>
-      <h1>READ</h1>
-      parameters : {props.params.id}
+      <h1>{topic.title}</h1>
+      <div>parameter : {props.params.id}</div>
+      <br />
+      <div>{topic.body}</div>
     </>
   );
 }
-
-export default page;

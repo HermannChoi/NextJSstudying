@@ -1,13 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bebas+Neue&family=Diphylleia&family=Rubik+Bubbles&display=swap");
 
 * {
   text-decoration: none;
-  font-family: "Bagel Fat One";
+  font-family: "Diphylleia";
 }
 
 body {
-  background-color: rgb(50, 50, 50);
-  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  margin: 20px;
+  color: floralwhite;
   font-size: 20px;
 }
 
@@ -24,4 +31,55 @@ a {
 a:hover {
   text-decoration: underline;
   text-shadow: 0 0 10px white;
+}
+
+.button {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: red;
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  width: 300px;
+  overflow-y: scroll;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid white;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.contents_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 30px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 100px;
 }
