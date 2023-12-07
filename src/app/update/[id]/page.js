@@ -1,9 +1,23 @@
 "use client";
-import "./createPage.css";
-import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import "src/app/create/createPage.css";
+import { useParams, useRouter } from "next/navigation";
 
-export default function Create() {
+export default function Update() {
   const router = useRouter();
+  const params = useParams();
+  const id = params.id;
+  useEffect(() => {
+    fetch(process.env.NEXT_PUBLIC_API_URL + "topics/" + id)
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        const title = result.title;
+        const body = result.body;
+        document.querySelector(".title").value = title;
+        document.querySelector(".body").value = body;
+      });
+  }, []);
 
   return (
     <>
@@ -14,13 +28,13 @@ export default function Create() {
           const title = e.target.title.value; //e.target하면 form 안을 가리킴. => name이 title인 태그
           const body = e.target.body.value;
           const options = {
-            method: "POST",
+            method: "PATCH", //or PUSH => 수정한걸 덮어씀.
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({ title, body }),
           };
-          fetch(process.env.NEXT_PUBLIC_API_URL + "topics", options)
+          fetch("http://localhost:9999/topics/" + id, options) // options => 어떤 형식으로 불러올 건지
             .then((res) => res.json())
             .then((result) => {
               console.log(result);
@@ -50,7 +64,7 @@ export default function Create() {
           ></textarea>
         </div>
         <div>
-          <input type="submit" value="submit" className="submit" />
+          <input type="submit" value="Update" className="submit" />
         </div>
       </form>
     </>

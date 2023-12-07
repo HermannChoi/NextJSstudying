@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Control from "./Control";
 import "./globals.css";
 import Link from "next/link";
@@ -8,7 +9,7 @@ import Link from "next/link";
 // };
 
 export default async function RootLayout({ children }) {
-  const resp = await fetch("http://localhost:9999/topics", {
+  const resp = await fetch(process.env.NEXT_PUBLIC_API_URL + "topics", {
     cache: "no-store",
   });
   if (!resp.ok) {
@@ -19,6 +20,9 @@ export default async function RootLayout({ children }) {
 
   return (
     <html>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body>
         <h1>
           <Link href="/">WEB</Link>

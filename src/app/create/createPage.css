@@ -1,11 +1,12 @@
 .title,
 .body,
 .submit {
-  width: 300px;
+  width: 350px;
   box-sizing: border-box;
   font-size: 20px;
   background-color: transparent !important;
   color: white;
+  border: 1px solid white;
 }
 
 .title {
