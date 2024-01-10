@@ -10,7 +10,6 @@ export default async function Read(props) {
   return (
     <>
       <h1>{topic.title}</h1>
-      <div>parameter : {props.params.id}</div>
       <br />
       <div>{topic.body}</div>
     </>
